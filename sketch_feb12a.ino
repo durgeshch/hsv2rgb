@@ -1,6 +1,7 @@
 const int redPin = 9;
 const int greenPin = 10;
 const int bluePin = 11;
+char c[7];
 
 void setup() {
   // put your setup code here, to run once:
@@ -13,13 +14,13 @@ Serial.begin(9600);
 void loop() {
   
 }
-
 void input(){
-  while (Serial.available() > 0) {
-    int h = Serial.parseInt();
-    float s = Serial.parseFloat();
-    float v = Serial.parseFloat();
-  }  
+    String h,s,v;
+    String c=Serial.read();
+    h=c.substring(1, 2);
+    s=c.substring(3, 4); 
+    v=c.substring(5, 6);
+
 }
 
 void hsv2rgb(int h,float s,float v) {
